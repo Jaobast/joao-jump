@@ -23,7 +23,7 @@ body{
     position: absolute; z-index: 2000;
     width: 80px;
     bottom: 0;
-    animation: pipe-animation 1.5s infinite linear;
+    animation: pipe-animation 2s infinite linear;
 }
 
 @keyframes pipe-animation {
@@ -35,10 +35,11 @@ body{
     position: absolute; z-index: 1000;
     width: 150px;
     bottom: 0;
+    left: 10px;
 }
 
 .jump{
-    animation: jump 500ms ease-out;
+    animation: jump 700ms ease-out;
 }
 
 @keyframes jump {
@@ -112,7 +113,7 @@ body{
     }
 
     .mario{
-        width: 100px;
+        width: 80px;
     }
 
     @keyframes jump {
