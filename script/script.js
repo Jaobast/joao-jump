@@ -1,4 +1,4 @@
-/* const mario = document.querySelector('.mario');
+const mario = document.querySelector('.mario');
 const pipe = document.querySelector('.pipe');
 
 const button = document.querySelector('.jump button');
@@ -17,7 +17,7 @@ const loop = setInterval(() => {
     const marioPosition = +window.getComputedStyle(mario).bottom.replace('px', '');
 
 
-    if(pipePosition <= 85 && pipePosition > 0  && marioPosition < 70){
+    if(pipePosition <= 85 && pipePosition > 0  && marioPosition < 50){
         pipe.style.animation ='none';
         pipe.style.left =`${pipePosition}px`;
 
@@ -28,6 +28,7 @@ const loop = setInterval(() => {
         mario.src = 'assets/game-over.png ';
         mario.style.width= '50px'
         mario.style.marginLeft= '35px'
+        mario.style.marginBottom= '23px'
 
         clearInterval(loop);
     }
@@ -35,13 +36,13 @@ const loop = setInterval(() => {
 
 document.addEventListener('keydown', jump);
 
-button.addEventListener('click', jump); */
+button.addEventListener('click', jump);
 
 
 
 
 
-
+/* 
 const mario = document.querySelector('.mario');
 const pipe = document.querySelector('.pipe');
 
@@ -82,4 +83,4 @@ const loop = setInterval(() => {
 
 document.addEventListener('keydown', jump);
 
-button.addEventListener('click', jump);
+button.addEventListener('click', jump); */

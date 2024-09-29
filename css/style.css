@@ -20,7 +20,7 @@ body{
 
 
 .pipe{
-    position: absolute;
+    position: absolute; z-index: 2000;
     width: 80px;
     bottom: 0;
     animation: pipe-animation 1.5s infinite linear;
