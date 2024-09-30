@@ -1,31 +1,31 @@
-const mario = document.querySelector('.mario');
+const vegetable = document.querySelector('.carrot');
 const pipe = document.querySelector('.pipe');
-const button = document.querySelector('.jump button');
+const button = document.querySelector('.jump-btn button');
 
 let loop; // Variável para o loop
 
 const jump = () => {
-    mario.classList.add('jump');
+    vegetable.classList.add('jump');
 
     setTimeout(() => {
-        mario.classList.remove('jump');
+        vegetable.classList.remove('jump');
     }, 700);
 };
 
 const startLoop = () => {
     loop = setInterval(() => {
         const pipePosition = pipe.offsetLeft;
-        const marioPosition = +window.getComputedStyle(mario).bottom.replace('px', '');
+        const vegetablePosition = +window.getComputedStyle(vegetable).bottom.replace('px', '');
 
-        if (pipePosition <= 70 && pipePosition > 0 && marioPosition < 60) {
+        if (pipePosition <= 70 && pipePosition > 0 && vegetablePosition < 60) {
             pipe.style.animation = 'none';
             pipe.style.left = `${pipePosition}px`;
 
-            mario.style.animation = 'none';
-            mario.style.bottom = `${marioPosition}px`;
+            vegetable.style.animation = 'none';
+            vegetable.style.bottom = `${vegetablePosition}px`;
 
-            mario.src = 'assets/joao-game-over.png';
-            mario.style.marginBottom = '13px';
+            vegetable.src = 'assets/joao-game-over.png';
+            vegetable.style.marginBottom = '13px';
 
             button.innerHTML = 'Restart';
             button.style.backgroundColor = 'red';
@@ -42,11 +42,11 @@ const restart = () => {
     pipe.style.animation = 'pipe-animation 2s infinite linear';
     pipe.style.left = '';
 
-    mario.style.animation = '';
-    mario.style.bottom = '0';
+    vegetable.style.animation = '';
+    vegetable.style.bottom = '0';
 
-    mario.src = 'assets/joao.gif';
-    mario.style.marginBottom = '';
+    vegetable.src = 'assets/joao.gif';
+    vegetable.style.marginBottom = '';
 
     button.innerHTML = 'Jump!';
     button.style.backgroundColor = '#1d9714';
