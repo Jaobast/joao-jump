@@ -88,6 +88,22 @@ body{
 }
 
 
+.jump{
+    position: absolute; z-index: 5;
+    bottom: 5vh; left: 5vh;
+    display: flex; justify-content: center;
+
+    & button{
+        font-size: 35px; font-weight: 700; font-family: 'Karantina'; 
+        text-transform: uppercase;
+        background-color: var(--blue-01); color: var(--green-04);
+        padding: 10px 20px;
+        border-radius: 10px;
+        border: none;
+    }
+}
+
+
 
 @media (orientation: portrait) {
 
@@ -124,6 +140,12 @@ body{
     .vegan{
         right: 20vw;
     }
+
+    .jump{
+        transform: translateX(-50%);
+        left: 50%;
+        bottom: 10vh;
+    }
 }
 
 
@@ -134,19 +156,6 @@ body{
 
 
 /* 
-
-.jump{
-    margin: 5vh auto;
-    display: flex; justify-content: center;
-
-    & button{
-        font-size: 30px; font-weight: 700;
-        background-color: #1d9714; color: #87ceeb;
-        padding: 10px 20px;
-        border-radius: 16px;
-        border: none;
-    }
-}
 
 
 .pipe{
