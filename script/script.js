@@ -1,4 +1,10 @@
-const vegetable = document.querySelector('.carrot');
+
+
+
+
+
+
+/* const vegetable = document.querySelector('.carrot');
 const pipe = document.querySelector('.pipe');
 const button = document.querySelector('.jump-btn button');
 
@@ -62,3 +68,4 @@ if (button.textContent.includes('Jump!')) {
 }
 
 startLoop(); // Inicia o loop quando o jogo começa
+ */

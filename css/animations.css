@@ -1,0 +1,30 @@
+.jump{
+    animation: jump 700ms ease-out!important;
+}
+
+@keyframes jump {
+    0% { bottom: 22vh; }
+    40% { bottom: calc(22vh + 200px); }
+    60% { bottom: calc(22vh + 200px); }
+    100% { bottom: 22vh; }
+}
+
+
+@keyframes vegan-run {
+    from{ right:-80px}
+    to{ right: 100%}
+}
+
+@keyframes cloud-up-down {
+    0% { top: 0; }
+    50% { top: 10px; }
+    100% { top: 0; }
+}
+
+@keyframes forward {
+    to{ transform: translate(-100%);}
+}
+@keyframes start-forward {
+    from{ transform: translate(30%);}
+    to{ transform: translate(-100%);}
+}
