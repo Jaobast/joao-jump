@@ -24,7 +24,13 @@
 @keyframes forward {
     to{ transform: translate(-100%);}
 }
-@keyframes start-forward {
+
+@keyframes start-forward-portrait {
     from{ transform: translate(30%);}
+    to{ transform: translate(-100%);}
+}
+
+@keyframes start-forward {
+    from{ transform: translate(50%);}
     to{ transform: translate(-100%);}
 }

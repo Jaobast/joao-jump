@@ -46,9 +46,9 @@ body{
 }
 
 .tree-container02{
-    animation: start-forward 37s infinite linear;
-    animation-delay: 22s;
-    transform: translateX(30%);
+    animation: start-forward 42s infinite linear;
+    animation-delay: 16s;
+    transform: translateX(50%);
 }
 
 
@@ -61,7 +61,7 @@ body{
 }
 
 .cloud {
-    height: 40vh;
+    height: 60vh;
 }
 
 
@@ -93,7 +93,7 @@ body{
 .vegan{
     right: 25vw;
     bottom: 22vh;
-    /* animation: vegan-run 2s infinite linear; */
+    animation: vegan-run 2.5s infinite linear;
 }
 
 
@@ -122,6 +122,12 @@ body{
         & .tree{
             height: 40vh;
         }
+    }
+
+    .tree-container02{
+        animation: start-forward-portrait 37s infinite linear;
+        animation-delay: 22s;
+        transform: translateX(30%);
     }
 
     .cloud-container{
