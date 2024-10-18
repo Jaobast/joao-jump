@@ -1,37 +1,39 @@
-const vegetable = document.querySelector('.carrot');
-const pipe = document.querySelector('.pipe');
+const carrot = document.querySelector('.carrot');
+const vegan = document.querySelector('.vegan');
 const button = document.querySelector('.jump-btn button');
 
 let loop; // Variável para o loop
 
 const jump = () => {
-    vegetable.classList.add('jump');
+    if (button.textContent.includes('Jump!')) { // Evitar pulo se o botão for "Restart"
+        carrot.classList.add('jump');
 
-    setTimeout(() => {
-        vegetable.classList.remove('jump');
-    }, 700);
+        setTimeout(() => {
+            carrot.classList.remove('jump');
+        }, 1200);
+    }
 };
 
 const startLoop = () => {
     loop = setInterval(() => {
-        const pipePosition = pipe.offsetLeft;
-        const vegetablePosition = +window.getComputedStyle(vegetable).bottom.replace('px', '');
+        const veganPositionLeft = vegan.offsetLeft;
+        
+        const carrotPosition = +window.getComputedStyle(carrot).bottom.replace('px', '');
+        const calculatedLimit = (window.innerHeight * 0.22) + 130;
 
-        if (pipePosition <= 70 && pipePosition > 0 && vegetablePosition < 60) {
-            pipe.style.animation = 'none';
-            pipe.style.left = `${pipePosition}px`;
+        if (veganPositionLeft <= window.innerWidth * 0.20 && veganPositionLeft > -10 && carrotPosition < calculatedLimit) {
+            vegan.style.animation = 'none';
+            vegan.style.left = `${veganPositionLeft}px`;
 
-            vegetable.style.animation = 'none';
-            vegetable.style.bottom = `${vegetablePosition}px`;
-
-            vegetable.src = 'assets/joao-game-over.png';
-            vegetable.style.marginBottom = '13px';
+            carrot.classList.remove('jump');
+            carrot.style.bottom = `${carrotPosition}px`;
 
             button.innerHTML = 'Restart';
             button.style.backgroundColor = 'red';
             button.style.color = 'white';
 
             clearInterval(loop); // Para o loop
+            button.removeEventListener('click', jump); // Remover evento de pulo no "Restart"
             button.addEventListener('click', restart); // Adiciona o evento de restart
         }
     }, 10);
@@ -39,24 +41,27 @@ const startLoop = () => {
 
 // Função de restart
 const restart = () => {
-    pipe.style.animation = 'pipe-animation 2s infinite linear';
-    pipe.style.left = '';
+    vegan.style.animation = 'vegan-run 2.5s infinite linear';
+    vegan.style.left = '';
 
-    vegetable.style.animation = '';
-    vegetable.style.bottom = '0';
+    carrot.style.animation = '';
+    carrot.style.bottom = '22vh';
 
-    vegetable.src = 'assets/joao.gif';
-    vegetable.style.marginBottom = '';
+    carrot.src = 'assets/Character-02-Karrot.gif';
 
     button.innerHTML = 'Jump!';
     button.style.backgroundColor = '#1d9714';
     button.style.color = '#87ceeb';
 
+    button.removeEventListener('click', restart); // Remove o evento de restart ao reiniciar
+    button.addEventListener('click', jump); // Adiciona de volta o evento de pulo no "Jump!"
+    
     startLoop(); // Reinicia o loop ao reiniciar o jogo
 };
 
 document.addEventListener('keydown', jump);
 
+// Quando o botão estiver com "Jump!", adicionar o evento de clique para pulo
 if (button.textContent.includes('Jump!')) {
     button.addEventListener('click', jump);
 }

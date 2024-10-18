@@ -85,17 +85,17 @@ body{
 }
 
 .carrot {
-    left: 20vw;
+    margin: 0 -20px 0 0;
+    right: 80vw;
     bottom: 22vh;
 }
 
 .jump{
-    animation: jump 700ms ease-out!important;
+    animation: jump 1000ms ease-out!important;
 }
 
 
 .vegan{
-    right: 25vw;
     bottom: 22vh;
     animation: vegan-run 2.5s infinite linear;
 }
@@ -154,16 +154,13 @@ body{
     }
     
     .carrot{
-        left: 10vw;
+        margin: 0 -10px 0 0;
     }
 
     .jump{
-        animation: jump-portrait 700ms ease-out!important;
+        animation: jump-portrait 1000ms ease-out!important;
     }
     
-    .vegan{
-        right: 20vw;
-    }
 
     .jump-btn{
         transform: translateX(-50%);
