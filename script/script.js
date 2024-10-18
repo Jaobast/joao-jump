@@ -2,10 +2,10 @@ const carrot = document.querySelector('.carrot');
 const vegan = document.querySelector('.vegan');
 const button = document.querySelector('.jump-btn button');
 
-let loop; // Variável para o loop
+let loop;
 
 const jump = () => {
-    if (button.textContent.includes('Jump!')) { // Evitar pulo se o botão for "Restart"
+    if (button.textContent.includes('Jump!')) {
         carrot.classList.add('jump');
 
         setTimeout(() => {
@@ -32,38 +32,40 @@ const startLoop = () => {
             button.style.backgroundColor = 'red';
             button.style.color = 'white';
 
-            clearInterval(loop); // Para o loop
-            button.removeEventListener('click', jump); // Remover evento de pulo no "Restart"
-            button.addEventListener('click', restart); // Adiciona o evento de restart
+            clearInterval(loop);
+            button.removeEventListener('click', jump);
+            button.addEventListener('click', restart);
         }
     }, 10);
 };
 
-// Função de restart
+
 const restart = () => {
     vegan.style.animation = 'vegan-run 2.5s infinite linear';
     vegan.style.left = '';
 
-    carrot.style.animation = '';
-    carrot.style.bottom = '22vh';
-
-    carrot.src = 'assets/Character-02-Karrot.gif';
+    if (window.matchMedia("(orientation: portrait)").matches) {
+        carrot.style.bottom = '30vh';
+    } else {
+        carrot.style.bottom = '22vh';
+    }
 
     button.innerHTML = 'Jump!';
     button.style.backgroundColor = '#1d9714';
     button.style.color = '#87ceeb';
 
-    button.removeEventListener('click', restart); // Remove o evento de restart ao reiniciar
-    button.addEventListener('click', jump); // Adiciona de volta o evento de pulo no "Jump!"
+    button.removeEventListener('click', restart);
+    button.addEventListener('click', jump);
     
-    startLoop(); // Reinicia o loop ao reiniciar o jogo
+    startLoop();
 };
+
 
 document.addEventListener('keydown', jump);
 
-// Quando o botão estiver com "Jump!", adicionar o evento de clique para pulo
+
 if (button.textContent.includes('Jump!')) {
     button.addEventListener('click', jump);
 }
 
-startLoop(); // Inicia o loop quando o jogo começa
+startLoop();

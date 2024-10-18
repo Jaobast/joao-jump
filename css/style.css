@@ -82,12 +82,12 @@ body{
     z-index: 2;
     position: absolute;
     height: 30vh;
+    bottom: 22vh;
 }
 
 .carrot {
     margin: 0 -20px 0 0;
     right: 80vw;
-    bottom: 22vh;
 }
 
 .jump{
@@ -96,7 +96,6 @@ body{
 
 
 .vegan{
-    bottom: 22vh;
     animation: vegan-run 2.5s infinite linear;
 }
 
