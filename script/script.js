@@ -2,6 +2,10 @@ const carrot = document.querySelector('.carrot');
 const vegan = document.querySelector('.vegan');
 const button = document.querySelector('.jump-btn button');
 
+const treeContainer01 = document.querySelector('.tree-container01');
+const treeContainer02 = document.querySelector('.tree-container02');
+const cloudContainer = document.querySelector('.cloud-container');
+
 let loop;
 
 const jump = () => {
@@ -13,7 +17,7 @@ const jump = () => {
         setTimeout(() => {
             carrot.classList.remove('jump');
             carrot.src = 'assets/Character-Karotte-run.gif';
-            carrot.style.right = '80vw'
+            carrot.style.right = '80vw';
         }, 1200);
     }
 };
@@ -21,7 +25,6 @@ const jump = () => {
 const startLoop = () => {
     loop = setInterval(() => {
         const veganPositionLeft = vegan.offsetLeft;
-        
         const carrotPosition = +window.getComputedStyle(carrot).bottom.replace('px', '');
         const calculatedLimit = (window.innerHeight * 0.22) + 130;
 
@@ -36,6 +39,10 @@ const startLoop = () => {
             button.style.backgroundColor = 'red';
             button.style.color = 'white';
 
+            treeContainer01.style.animationPlayState = 'paused';
+            treeContainer02.style.animationPlayState = 'paused';
+            cloudContainer.style.animationPlayState = 'paused';
+
             clearInterval(loop);
             button.removeEventListener('click', jump);
             button.addEventListener('click', restart);
@@ -43,10 +50,13 @@ const startLoop = () => {
     }, 10);
 };
 
-
 const restart = () => {
     vegan.style.animation = 'vegan-run 2s infinite linear';
     vegan.style.left = '';
+
+    treeContainer01.style.animationPlayState = 'running';
+    treeContainer02.style.animationPlayState = 'running';
+    cloudContainer.style.animationPlayState = 'running';
 
     if (window.matchMedia("(orientation: portrait)").matches) {
         carrot.style.bottom = '30vh';
@@ -57,16 +67,17 @@ const restart = () => {
     button.innerHTML = 'Jump!';
     button.style.backgroundColor = '#1d9714';
     button.style.color = '#87ceeb';
-
     button.removeEventListener('click', restart);
     button.addEventListener('click', jump);
     
     startLoop();
 };
 
-
-document.addEventListener('keydown', jump);
-
+document.addEventListener('keydown', (e) => {
+    if (e.key === ' ' && button.textContent.includes('Jump!')) {
+        jump();
+    }
+});
 
 if (button.textContent.includes('Jump!')) {
     button.addEventListener('click', jump);
