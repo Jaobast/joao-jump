@@ -7,9 +7,11 @@ let loop;
 const jump = () => {
     if (button.textContent.includes('Jump!')) {
         carrot.classList.add('jump');
+        carrot.src = 'assets/Character-Karotte-jump.gif';
 
         setTimeout(() => {
             carrot.classList.remove('jump');
+            carrot.src = 'assets/Character-Karotte-run.gif';
         }, 1200);
     }
 };
@@ -41,7 +43,7 @@ const startLoop = () => {
 
 
 const restart = () => {
-    vegan.style.animation = 'vegan-run 2.5s infinite linear';
+    vegan.style.animation = 'vegan-run 2s infinite linear';
     vegan.style.left = '';
 
     if (window.matchMedia("(orientation: portrait)").matches) {
