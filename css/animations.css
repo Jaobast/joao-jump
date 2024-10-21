@@ -7,8 +7,8 @@
 
 @keyframes jump-portrait {
     0% { bottom: 30vh; }
-    40% { bottom: calc(30vh + 120px); }
-    50% { bottom: calc(30vh + 120px); }
+    40% { bottom: calc(30vh + 270px); }
+    70% { bottom: calc(30vh + 270px); }
     100% { bottom: 30vh; }
 }
 

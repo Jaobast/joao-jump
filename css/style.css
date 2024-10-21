@@ -87,11 +87,11 @@ body{
 
 .carrot {
     margin: 0 -20px 0 0;
-    right: 80vw;
+    right: 75vw;
 }
 
 .jump{
-    animation: jump 1000ms ease-out!important;
+    animation: jump 1200ms ease-out!important;
 }
 
 
@@ -148,7 +148,7 @@ body{
     }
 
     .character{
-        height: 12vh;
+        height: 20vh;
         bottom: 30vh;
     }
     

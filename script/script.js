@@ -12,12 +12,12 @@ const jump = () => {
     if (button.textContent.includes('Jump!')) {
         carrot.classList.add('jump');
         carrot.src = 'assets/Character-Karotte-jump.gif';
-        carrot.style.right = 'calc(80vw - 10px)';
+        carrot.style.right = 'calc(75vw - 10px)';
 
         setTimeout(() => {
             carrot.classList.remove('jump');
             carrot.src = 'assets/Character-Karotte-run.gif';
-            carrot.style.right = '80vw';
+            carrot.style.right = '75vw';
         }, 1200);
     }
 };
