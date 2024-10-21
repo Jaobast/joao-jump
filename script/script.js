@@ -8,10 +8,12 @@ const jump = () => {
     if (button.textContent.includes('Jump!')) {
         carrot.classList.add('jump');
         carrot.src = 'assets/Character-Karotte-jump.gif';
+        carrot.style.right = 'calc(80vw - 10px)';
 
         setTimeout(() => {
             carrot.classList.remove('jump');
             carrot.src = 'assets/Character-Karotte-run.gif';
+            carrot.style.right = '80vw'
         }, 1200);
     }
 };
