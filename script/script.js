@@ -29,7 +29,7 @@ const startLoop = () => {
         const carrotPosition = +window.getComputedStyle(carrot).bottom.replace('px', '');
         const calculatedLimit = (window.innerHeight * 0.22) + 200;
 
-        if (veganPositionLeft <= window.innerWidth * 0.20 && veganPositionLeft > -10 && carrotPosition < calculatedLimit) {
+        if (veganPositionLeft <= window.innerWidth * 0.20 && veganPositionLeft > -50 && carrotPosition < calculatedLimit) {
             vegan.style.animation = 'none';
             vegan.style.left = `${veganPositionLeft}px`;
 
@@ -54,7 +54,7 @@ const startLoop = () => {
 };
 
 const restart = () => {
-    vegan.style.animation = 'vegan-run 2.5s infinite linear';
+    vegan.style.animation = 'vegan-run 2s infinite linear';
     vegan.style.left = '';
 
     treeContainer01.style.animationPlayState = 'running';
