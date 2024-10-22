@@ -3,9 +3,25 @@
     box-sizing: border-box;
 }
 
+
+#gameover{
+    position: relative;
+    z-index: 5;
+    height: 100vh;
+    display: flex; flex-direction: column;
+    justify-content: center; align-items: center;
+    background-color: rgba(0, 0, 0, 0.6);
+
+    & img{
+        margin: -20vh 0 0 -10vw;
+        height: 50vh;
+    }
+}
+
+
+
 body{
-    max-width: 100vw; height: 100vh;
-    min-height: -webkit-fill-available;
+    max-width: 100vw; max-height: 100vh;
 }
 
 .game-board{
@@ -102,7 +118,7 @@ body{
 
 
 .jump-btn{
-    position: absolute; z-index: 5;
+    position: absolute; z-index: 6;
     bottom: 5vh; left: 5vh;
     display: flex; justify-content: center;
 
@@ -114,6 +130,10 @@ body{
         border-radius: 10px;
         border: none;
     }
+}
+
+.hidden{
+    display: none!important;
 }
 
 
@@ -148,12 +168,16 @@ body{
     }
 
     .character{
-        height: 20vh;
         bottom: 30vh;
     }
     
     .carrot{
         margin: 0 -10px 0 0;
+        height: 20vh;
+    }
+
+    .vegan{
+        height: 25vh;
     }
 
     .jump{

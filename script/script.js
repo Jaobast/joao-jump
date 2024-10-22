@@ -1,6 +1,7 @@
 const carrot = document.querySelector('.carrot');
 const vegan = document.querySelector('.vegan');
 const button = document.querySelector('.jump-btn button');
+const gameOverContainer = document.querySelector('#gameover');
 
 const treeContainer01 = document.querySelector('.tree-container01');
 const treeContainer02 = document.querySelector('.tree-container02');
@@ -39,6 +40,8 @@ const startLoop = () => {
             button.style.backgroundColor = 'red';
             button.style.color = 'white';
 
+            gameOverContainer.classList.remove('hidden');
+
             treeContainer01.style.animationPlayState = 'paused';
             treeContainer02.style.animationPlayState = 'paused';
             cloudContainer.style.animationPlayState = 'paused';
@@ -57,6 +60,8 @@ const restart = () => {
     treeContainer01.style.animationPlayState = 'running';
     treeContainer02.style.animationPlayState = 'running';
     cloudContainer.style.animationPlayState = 'running';
+
+    gameOverContainer.classList.add('hidden');
 
     if (window.matchMedia("(orientation: portrait)").matches) {
         carrot.style.bottom = '30vh';
